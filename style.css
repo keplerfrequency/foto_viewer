@@ -1,0 +1,94 @@
+/* Style the container for the buttons */
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+  }
+  
+  /* Style the buttons */
+  .button-container button {
+    padding: 10px;
+    margin: 0 10px;
+    font-size: 1rem;
+    background-color: #ccc;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .button-container button:hover {
+    background-color: #ddd;
+  }
+  
+  /* Create a grid for the buttons */
+  .button-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-gap: 10px;
+    justify-items: center;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+
+.foto{
+    height: 90vh;
+    align-items: center;
+}
+
+.carousel{
+    align-items: center;    
+}
+
+/* Center the carousel 
+#carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+  }
+  
+  /* Style the carousel controls 
+  .carousel-control-prev, .carousel-control-next {
+    width: 50%;
+    opacity: 0;
+  }
+  
+  .carousel-control-prev:hover, .carousel-control-next:hover {
+    opacity: 0.5;
+  }
+  
+  .carousel:hover .carousel-control-prev, .carousel:hover .carousel-control-next {
+    opacity: 1;
+  }
+  
+  
+  /* Style the carousel indicators 
+    bottom: 0;
+  }
+  
+  .carousel-indicators li {
+    background-color: #ccc;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+  }
+  
+  .carousel-indicators .active {
+    background-color: #333;
+  }
+  
+  /* Style the carousel items 
+  .carousel-item {
+    height: 50%;
+  }
+  
+  .carousel-item img {
+    height: 50%;
+    width: auto;
+    object-fit: cover;
+  }
+  
