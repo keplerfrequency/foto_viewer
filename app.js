@@ -25,11 +25,9 @@ const myPhotos = [
 
 document.addEventListener("DOMContentLoaded", function() {
   
-  const carousel = document.getElementById('carouselExampleControls');
   
-  carousel.addEventListener('slide.bs.carousel', event => {
-    console.log(123);
-  })
+  
+
     
 });
 
@@ -48,5 +46,9 @@ function updateAltText(){
 
 $(document).ready(function(){
   $('.carousel').carousel();
+
+  $('#carouselExampleControls').on('slid.bs.carousel', function () {
+    updateAltText();
+  })
 });
   
