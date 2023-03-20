@@ -15,12 +15,34 @@ function generateCarouselHTML(photos) {
 
 function generateButtons(){
 
-    $.getJSON('result.json', function(jd) {
-       $('#stage').html('<p> Name: ' + jd.name + '</p>');
-       $('#stage').append('<p>Age : ' + jd.age+ '</p>');
-       $('#stage').append('<p> Sex: ' + jd.sex+ '</p>');
+  let categories = [];
+
+  $.getJSON('photos.json', function(result) {
+    $.each(result, function(i, foto){
+
+      let allCategories = foto.category.split(' ')
+
+      for (let i = 0; i < allCategories.length; i++) {
+          if(!categories.includes(allCategories[i])){
+          categories.push(allCategories[i]);
+        };
+      }
+    })
+    
+    let html = '';
+  
+    categories.forEach(category => {
+      categoryClean = category.replace('-', ' ')
+      html += `
+      <button class="category-btn" data-category="${category}">${categoryClean}</button>`;
     });
- };
+    
+    const buttonRepo = document.querySelector('#button-repo');
+    buttonRepo.innerHTML = html;
+  });
+
+}
+
 
 // Sample photo data
 const myPhotos = [
@@ -44,6 +66,7 @@ function updateAltText(){
 };
 
 $(document).ready(function(){
+
   $('.carousel').carousel();
 
   $('#carouselExampleControls').on('slid.bs.carousel', function () {
