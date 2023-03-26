@@ -50,26 +50,33 @@ const myPhotos = [
   {src: './photos/_13_0771.jpg', alt: 'Leiden', category: 'ideal'},
   {src: './photos/_24_0950.jpg', alt: 'Frankfurt', category: 'towers'},
   {src: './photos/_28_0953.jpg', alt: 'Drachten', category: 'geometric'},
-  {src: './photos/_35_0960.jpg', alt: 'Brussel', category: 'geometric'},
+  //{src: './photos/_35_0960.jpg', alt: 'Brussel', category: 'geometric'},
 ];
 
 function updateAltText(){
   
-  let act_image = document.getElementsByClassName('carousel-item active')[0].firstElementChild.getAttribute('alt');
+  const activeImg = document.querySelector('.carousel-item.active .foto');
   
-  if(act_image){
-    document.getElementById('alt_text').textContent = act_image;
-  } else{
-    document.getElementById('alt_text').textContent = '';
-  } 
-
+  const altText = activeImg.alt;
+  
+  const myDiv = document.getElementById('alt_text');
+  myDiv.textContent = altText;
 };
+
+
+
+document.addEventListener("click", function(){
+  updateAltText();
+
+
+});
+
 
 $(document).ready(function(){
 
   $('.carousel').carousel();
 
-  $('#carouselExampleControls').on('slid.bs.carousel', function () {
+   $('#carouselExampleControls').on('slid.bs.carousel', function () {
     updateAltText();
   })
   

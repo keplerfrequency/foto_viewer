@@ -1,9 +1,16 @@
-/* Style the container for the buttons */
+/* Buttons */
+.button-scroll-container {
+  overflow-x: auto; /* Enable horizontal scrolling */
+  white-space: nowrap; /* Prevent line breaks */
+  -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
+  height: 10%;
+}
 .button-container {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 20px 0;
+    display: inline-block; /* Make the ul a block-level element */
   }
   
 /* Style the buttons */
@@ -33,39 +40,30 @@
   margin: 0 auto;
 }
 
-.button-scroll-container {
-  overflow-x: auto; /* Enable horizontal scrolling */
-  white-space: nowrap; /* Prevent line breaks */
-  -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
-}
-
-.button-container {
-  display: inline-block; /* Make the ul a block-level element */
-}
-
 .category-btn {
   display: inline-block; /* Make the button a block-level element */
   padding: 10px; /* Add padding to the button */
   margin-right: 10px; /* Add some space between buttons */
 }
 
+
+/* Carousel */
 .carouselExampleControls{
   align-items: center;
   justify-content: center;
   position: absolute;
-
+  height: 80%;
 }
 
 .carousel-inner {
   display: flex;
   align-items: center;
-  height: 100%;
 }
 
 .foto {
   display: flex;
   max-width: 100vw;
-  max-height: 100vh;
+  max-height: 80vh;
   justify-content: center;
   align-items: center;
 }
@@ -75,10 +73,14 @@
   height: 90%;
 }
 
+.carousel-item{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 
-
-
+/*Alt text below*/
 #alt_text {
   position: fixed;
   display: flex;
@@ -87,7 +89,7 @@
   left: 0;
   bottom: 0;
   width: 100%;
-  height: 100px;
+  height: 10%;
   background-color: black;
   color: azure;
   padding: 20px;
