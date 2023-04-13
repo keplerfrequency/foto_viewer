@@ -2,42 +2,47 @@
     {
         "src": "photos/22-05-06-Mai-Jun/R1-01.JPG",
         "alt": "Koningsplein, Den Haag", 
-        "category": "all netherlands"
+        "category": "all pitoresco"
+    },
+    {
+        "src": "photos/22-05-06-Mai-Jun/R1-07.JPG",
+        "alt": "Delhaize, Brussel", 
+        "category": "all biking"
     },
     {
         "src": "photos/22-05-06-Mai-Jun/R1-08.JPG",
         "alt": "Hallerbos, Belgium", 
-        "category": "all nature"
+        "category": "all nature biking"
     },
     {
         "src": "photos/22-05-06-Mai-Jun/R1-12.JPG",
         "alt": "Tim & Geoff, Belgium", 
-        "category": "all people"
+        "category": "all people biking"
     },
     {
         "src": "photos/22-05-06-Mai-Jun/R1-14.JPG",
         "alt": "Geoff, Belgium", 
-        "category": "all people"
+        "category": "all people biking"
     },
     {
         "src": "photos/22-05-06-Mai-Jun/R1-19.JPG",
         "alt": "Somewhere, France", 
-        "category": "all industry"
+        "category": "all industry biking"
     },
     {
         "src": "photos/22-05-06-Mai-Jun/R1-22.JPG",
         "alt": "Farmlands, France", 
-        "category": "all industry"
+        "category": "all industry biking"
     },
     {
         "src": "photos/22-05-06-Mai-Jun/R1-25.JPG",
         "alt": "Nucelar power plant, france", 
-        "category": "all industry"
+        "category": "all industry biking"
     },
     {
         "src": "photos/22-05-06-Mai-Jun/R1-27.JPG",
-        "alt": "Bikepacking, france", 
-        "category": "all industry"
+        "alt": "biking, france", 
+        "category": "all industry biking"
     },
 
 
@@ -47,46 +52,269 @@
 
     {
         "src": "photos/22-06-07-Jun-Jul/__0_0836.jpg",
-        "alt": "Pirineus, france/spain", 
-        "category": "all nature"
+        "alt": "Pirineus, spain", 
+        "category": "all biking"
     },
     {
         "src": "photos/22-06-07-Jun-Jul/__2_0838.jpg",
         "alt": "National road, spain", 
-        "category": "all nature"
+        "category": "all biking"
     },
     {
         "src": "photos/22-06-07-Jun-Jul/__6_0842.jpg",
         "alt": "veichle Repository, spain", 
         "category": "all geometric"
     },
+    {
+        "src": "photos/22-06-07-Jun-Jul/__7_843.jpg",
+        "alt": "National road 2, spain", 
+        "category": "all biking"
+    },
+    {
+        "src": "photos/22-06-07-Jun-Jul/__8_0844.jpg",
+        "alt": "La discoteca, spain", 
+        "category": "all biking"
+    },
+    {
+        "src": "photos/22-06-07-Jun-Jul/_10_0846.jpg",
+        "alt": "Backroads, spain", 
+        "category": "all biking"
+    },
+    {
+        "src": "photos/22-06-07-Jun-Jul/_12_0848.jpg",
+        "alt": "industria, Portalegre", 
+        "category": "all industry biking"
+    },
+    {
+        "src": "photos/22-06-07-Jun-Jul/_15_0851.jpg",
+        "alt": "Nuno & Alexandre, Lisboa", 
+        "category": "all people"
+    },
+    {
+        "src": "photos/22-06-07-Jun-Jul/_16_0852.jpg",
+        "alt": "Stefano McKinsey, Milano", 
+        "category": "all people"
+    },
+    {
+        "src": "photos/22-06-07-Jun-Jul/_17_0853.jpg",
+        "alt": "Marisa, Monopoli", 
+        "category": "all people"
+    },
+    {
+        "src": "photos/22-06-07-Jun-Jul/_21_0857.jpg",
+        "alt": "Marisa & Dino, Italia", 
+        "category": "all people"
+    },
+    {
+        "src": "photos/22-06-07-Jun-Jul/_22_0858.jpg",
+        "alt": "Marisa Verstappen, Italia", 
+        "category": "all people"
+    },
+    {
+        "src": "photos/22-06-07-Jun-Jul/_25_0861.jpg",
+        "alt": "Marisa & Gelato, Campania", 
+        "category": "all people"
+    },
+    {
+        "src": "photos/22-06-07-Jun-Jul/_26_0862.jpg",
+        "alt": "Spiaggia , Italia", 
+        "category": "all geometric"
+    },
    
 
 
+
     {
-        "src": "photos/_13_0771.jpg",
-        "alt": "Harbour, Leiden",
-        "category": "all netherlands"
-    },
-    {
-        "src": "photos/_15_0773.jpg",
-        "alt": "Canal, Utrecht", 
+        "src": "photos/22-07-08-Jul-Aug/_3A_1093.jpg",
+        "alt": "Tuscania, Italia",
         "category": "all"
     },
     {
-        "src": "photos/_24_0950.jpg",
+        "src": "photos/22-07-08-Jul-Aug/_4A_1094.jpg",
+        "alt": "Siena, Italia",
+        "category": "all pitoresco"
+    },
+    {
+        "src": "photos/22-07-08-Jul-Aug/_7A_1097.jpg",
+        "alt": "Tuscania, Italia",
+        "category": "all pitoresco"
+    },
+    {
+        "src": "photos/22-07-08-Jul-Aug/_8A_1098.jpg",
+        "alt": "Firenze, Italia",
+        "category": "all towers"
+    },
+    {
+        "src": "photos/22-07-08-Jul-Aug/10A_1100.jpg",
+        "alt": "Po, Italia",
+        "category": "all nature"
+    },
+    {
+        "src": "photos/22-07-08-Jul-Aug/13A_1103.jpg",
+        "alt": "Alps, France",
+        "category": "all nature"
+    },
+    {
+        "src": "photos/22-07-08-Jul-Aug/14A_1104.jpg",
+        "alt": "Alps, France",
+        "category": "all geometric"
+    },
+    {
+        "src": "photos/22-07-08-Jul-Aug/23A_1113.jpg",
+        "alt": "Julius, Kijkuit",
+        "category": "all biking people"
+    },
+    {
+        "src": "photos/22-07-08-Jul-Aug/25A_1115.jpg",
+        "alt": "Stefano, Lake Bled",
+        "category": "all biking people"
+    },
+    {
+        "src": "photos/22-07-08-Jul-Aug/28A_1118.jpg",
+        "alt": "Tim, Slovenia",
+        "category": "all People"
+    },
+    {
+        "src": "photos/22-07-08-Jul-Aug/32A_1112.jpg",
+        "alt": "Binnenhof, Den Haag",
+        "category": "all pitoresco"
+    },
+
+
+
+
+    {
+        "src": "photos/22-08-11-Aug-Nov/__0_0758.jpg",
+        "alt": "Botanic garden, Berlin",
+        "category": "all pitoresco"
+    },
+    {
+        "src": "photos/22-08-11-Aug-Nov/__1_0759.jpg",
+        "alt": "Botanic garden 2, Berlin", 
+        "category": "all geometric"
+    },
+    {
+        "src": "photos/22-08-11-Aug-Nov/__4_0762.jpg",
+        "alt": "Center for something, Berlin", 
+        "category": "all geometric"
+    },
+    {
+        "src": "photos/22-08-11-Aug-Nov/__6_0764.jpg",
+        "alt": "Red, Berlin", 
+        "category": "all geometric"
+    },
+    {
+        "src": "photos/22-08-11-Aug-Nov/__7_0765.jpg",
+        "alt": "Aschwin, The mansion", 
+        "category": "all poeple"
+    },
+    {
+        "src": "photos/22-08-11-Aug-Nov/__8_0766.jpg",
+        "alt": "marisa, ouddorp", 
+        "category": "all people"
+    },
+    {
+        "src": "photos/22-08-11-Aug-Nov/_10_0768.jpg",
+        "alt": "marisa, deltawerken", 
+        "category": "all people"
+    },
+    {
+        "src": "photos/22-08-11-Aug-Nov/_13_0771.jpg",
+        "alt": "Haven, Leiden",
+        "category": "all pitoresco"
+    },
+    {
+        "src": "photos/22-08-11-Aug-Nov/_15_0773.jpg",
+        "alt": "Oudegracht, Utrecht", 
+        "category": "all pitoresco"
+    },
+    {
+        "src": "photos/22-08-11-Aug-Nov/_17_0775.jpg",
+        "alt": "Creeping green, Den Haag", 
+        "category": "all geometric"
+    },
+    {
+        "src": "photos/22-08-11-Aug-Nov/_30_0788.jpg",
+        "alt": "marisa, Amsterdamse Waterleidingduinen", 
+        "category": "all nature people"
+    },
+    {
+        "src": "photos/22-08-11-Aug-Nov/_33_0791.jpg",
+        "alt": "tim & matt & jimena & marisa, Kepplerstraat", 
+        "category": "all people"
+    },
+
+
+
+    {
+        "src": "photos/22-23 11-03 Nov-Mar/__0_0926.jpg",
+        "alt": "Geoff, Weiland", 
+        "category": "all people biking"
+    },
+    {
+        "src": "photos/22-23 11-03 Nov-Mar/__3_0929.jpg",
+        "alt": "Geoff & Ana, Amsterdam", 
+        "category": "all poeple"
+    },
+    {
+        "src": "photos/22-23 11-03 Nov-Mar/__4_0930.jpg",
+        "alt": "Marisa, Terreiro do Paço", 
+        "category": "all people"
+    },
+    {
+        "src": "photos/22-23 11-03 Nov-Mar/__5_0931.jpg",
+        "alt": "28, Lisboa", 
+        "category": "all pitoresco"
+    },
+    {
+        "src": "photos/22-23 11-03 Nov-Mar/__8_0934.jpg",
+        "alt": "Ponte 25 de abril, Lisboa", 
+        "category": "all pitoresco"
+    },
+    {
+        "src": "photos/22-23 11-03 Nov-Mar/_19_0945.jpg",
+        "alt": "Moinhos, Urk", 
+        "category": "all pitoresco geometric"
+    },
+    {
+        "src": "photos/22-23 11-03 Nov-Mar/_21_0947.jpg",
+        "alt": "Schappen, Weiland", 
+        "category": "all nature biking"
+    },
+    {
+        "src": "photos/22-23 11-03 Nov-Mar/_22_0948.jpg",
+        "alt": "Geoff & Toby, Weiland", 
+        "category": "all people"
+    },
+    {
+        "src": "photos/22-23 11-03 Nov-Mar/_24_0950.jpg",
         "alt": "ECB, Frankfurt", 
         "category": "all towers"
     },
     {
-        "src": "photos/_28_0953.jpg",
+        "src": "photos/22-23 11-03 Nov-Mar/_28_0953.jpg",
         "alt": "Carillon, Drachten", 
-        "category": "all"
+        "category": "all geometric"
     },
     {
-        "src": "photos/_35_0960.jpg",
+        "src": "photos/22-23 11-03 Nov-Mar/_29_0954.jpg",
+        "alt": "Straatje, Middelburg", 
+        "category": "all pitoresco"
+    },
+    {
+        "src": "photos/22-23 11-03 Nov-Mar/_33_0958.jpg",
+        "alt": "Alex & Marisa, Brussel", 
+        "category": "all people"
+    },
+    {
+        "src": "photos/22-23 11-03 Nov-Mar/_34_0959.jpg",
         "alt": "Atomium, Brussel", 
         "category": "all geometric"
+    },
+    {
+        "src": "photos/22-23 11-03 Nov-Mar/_36_0953.jpg",
+        "alt": "Marisa, Brussel", 
+        "category": "all poeple"
     }
 
 ]
