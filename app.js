@@ -4,7 +4,7 @@ function generateCarouselHTML(photos) {
 
   photos.forEach(photo => {
 
-    src = "https://raw.githubusercontent.com/keplerfrequency/foto_viewer/blob/main/" + photo.src
+    src = "https://github.com/keplerfrequency/foto_viewer/blob/main/" + photo.src + "?raw=true"
 
     html += `
       <div class="carousel-item">
