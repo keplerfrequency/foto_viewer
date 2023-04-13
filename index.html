@@ -58,7 +58,7 @@
             const category = btn.getAttribute('data-category');
             
             const filteredPhotos = myPhotos.filter(photo => {
-                return photo.category === category || category === 'all';
+                return photo.category.includes(category) || category === 'all';
             });
 
             const carouselHTML = generateCarouselHTML(filteredPhotos);
