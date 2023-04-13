@@ -50,9 +50,9 @@ function updateAltText(){
   
   const activeImg = document.querySelector('.carousel-item.active .foto');
   
-  const altText = activeImg.alt;
+  const altText = activeImg.alt.split(",").join("\n");
   
-  const myDiv = document.getElementById('alt_text');
+  const myDiv = document.getElementById('line_breaker');
   myDiv.textContent = altText.toUpperCase();
 
 };
