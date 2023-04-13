@@ -35,7 +35,7 @@ function generateButtons(){
     let html = '';
   
     categories.forEach(category => {
-      categoryClean = category.replace('-', ' ')
+      categoryClean = category.replace('-', ' ').toUpperCase()
       html += `
       <button class="category-btn" data-category="${category}">${categoryClean}</button>`;
     });
@@ -53,7 +53,7 @@ function updateAltText(){
   const altText = activeImg.alt;
   
   const myDiv = document.getElementById('alt_text');
-  myDiv.textContent = altText;
+  myDiv.textContent = altText.toUpperCase();
 
 };
 
@@ -113,21 +113,8 @@ $(document).ready(function(){
     if (error) {
       console.error(error);
     } else {
-      // Access the global variable `photos` here
       console.log(myPhotos);
     }
   });
 
 });
-  
-
-
-
-// Sample photo data
-/*const myPhotos = [
-  {src: './photos/_15_0773.jpg', alt: 'Utrecht', category: 'ideal'},
-  {src: './photos/_13_0771.jpg', alt: 'Leiden', category: 'ideal'},
-  {src: './photos/_24_0950.jpg', alt: 'Frankfurt', category: 'towers'},
-  {src: './photos/_28_0953.jpg', alt: 'Drachten', category: 'geometric'},
-  //{src: './photos/_35_0960.jpg', alt: 'Brussel', category: 'geometric'},
-];*/
