@@ -48,33 +48,16 @@
 
 
 /* Carousel */
-.carouselExampleControls{
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  height: 80%;
-}
-
-.carousel-inner {
-  display: flex;
-  align-items: center;
-}
-
-.foto {
-  display: flex;
+.carousel-inner img {
   max-width: 100vw;
   max-height: 80vh;
-  justify-content: center;
-  align-items: center;
-}
-  
-.carousel-control-next{
-  position: absolute;
-  height: 90%;
+  margin: auto; 
 }
 
-.carousel-item{
+.carousel-item > div {
+  height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }

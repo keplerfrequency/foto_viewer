@@ -1,27 +1,27 @@
 [
     {
         "src": "photos/_13_0771.jpg",
-        "alt": "Leiden",
+        "alt": "Leiden harbour",
         "category": "all ideal netherlands"
     },
     {
         "src": "photos/_15_0773.jpg",
-        "alt": "Utrecht", 
-        "category": "all ideal-cat"
+        "alt": "Utrecht canal", 
+        "category": "all"
     },
     {
         "src": "photos/_24_0950.jpg",
-        "alt": "Frankfurt", 
+        "alt": "Frankfurt ECB", 
         "category": "all towers"
     },
     {
         "src": "photos/_28_0953.jpg",
-        "alt": "Drachten", 
+        "alt": "Drachten center", 
         "category": "all"
     },
     {
         "src": "photos/_35_0960.jpg",
-        "alt": "Brussel", 
+        "alt": "Brussel Atomium", 
         "category": "all geometric"
     }
 ]
