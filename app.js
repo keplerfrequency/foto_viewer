@@ -8,7 +8,7 @@ function generateCarouselHTML(photos) {
 
     html += `
       <div class="carousel-item">
-        <img src="${photo.src}" alt="${photo.alt}" class="foto">
+        <img src="${src}" alt="${photo.alt}" class="foto">
       </div>
     `;
   });
