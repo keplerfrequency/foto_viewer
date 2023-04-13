@@ -6,8 +6,8 @@
     },
     {
         "src": "photos/22-05-06-Mai-Jun/R1-07.JPG",
-        "alt": "Delhaize, Brussel", 
-        "category": "all biking"
+        "alt": "Tim , Brussel", 
+        "category": "all biking people"
     },
     {
         "src": "photos/22-05-06-Mai-Jun/R1-08.JPG",
@@ -63,7 +63,7 @@
     {
         "src": "photos/22-06-07-Jun-Jul/__6_0842.jpg",
         "alt": "veichle Repository, spain", 
-        "category": "all geometric"
+        "category": "all Patterns&color"
     },
     {
         "src": "photos/22-06-07-Jun-Jul/__7_843.jpg",
@@ -118,7 +118,7 @@
     {
         "src": "photos/22-06-07-Jun-Jul/_26_0862.jpg",
         "alt": "Spiaggia , Italia", 
-        "category": "all geometric"
+        "category": "all Patterns&color"
     },
    
 
@@ -157,7 +157,7 @@
     {
         "src": "photos/22-07-08-Jul-Aug/14A_1104.jpg",
         "alt": "Alps, France",
-        "category": "all geometric"
+        "category": "all Patterns&color"
     },
     {
         "src": "photos/22-07-08-Jul-Aug/23A_1113.jpg",
@@ -172,7 +172,7 @@
     {
         "src": "photos/22-07-08-Jul-Aug/28A_1118.jpg",
         "alt": "Tim, Slovenia",
-        "category": "all People"
+        "category": "all people"
     },
     {
         "src": "photos/22-07-08-Jul-Aug/32A_1112.jpg",
@@ -191,22 +191,22 @@
     {
         "src": "photos/22-08-11-Aug-Nov/__1_0759.jpg",
         "alt": "Botanic garden 2, Berlin", 
-        "category": "all geometric"
+        "category": "all Patterns&color"
     },
     {
         "src": "photos/22-08-11-Aug-Nov/__4_0762.jpg",
         "alt": "Center for something, Berlin", 
-        "category": "all geometric"
+        "category": "all Patterns&color"
     },
     {
         "src": "photos/22-08-11-Aug-Nov/__6_0764.jpg",
         "alt": "Red, Berlin", 
-        "category": "all geometric"
+        "category": "all Patterns&color"
     },
     {
         "src": "photos/22-08-11-Aug-Nov/__7_0765.jpg",
         "alt": "Aschwin, The mansion", 
-        "category": "all poeple"
+        "category": "all people"
     },
     {
         "src": "photos/22-08-11-Aug-Nov/__8_0766.jpg",
@@ -231,7 +231,7 @@
     {
         "src": "photos/22-08-11-Aug-Nov/_17_0775.jpg",
         "alt": "Creeping green, Den Haag", 
-        "category": "all geometric"
+        "category": "all Patterns&color"
     },
     {
         "src": "photos/22-08-11-Aug-Nov/_30_0788.jpg",
@@ -254,7 +254,7 @@
     {
         "src": "photos/22-23 11-03 Nov-Mar/__3_0929.jpg",
         "alt": "Geoff & Ana, Amsterdam", 
-        "category": "all poeple"
+        "category": "all people"
     },
     {
         "src": "photos/22-23 11-03 Nov-Mar/__4_0930.jpg",
@@ -274,7 +274,7 @@
     {
         "src": "photos/22-23 11-03 Nov-Mar/_19_0945.jpg",
         "alt": "Moinhos, Urk", 
-        "category": "all pitoresco geometric"
+        "category": "all pitoresco Patterns&color"
     },
     {
         "src": "photos/22-23 11-03 Nov-Mar/_21_0947.jpg",
@@ -294,7 +294,7 @@
     {
         "src": "photos/22-23 11-03 Nov-Mar/_28_0953.jpg",
         "alt": "Carillon, Drachten", 
-        "category": "all geometric"
+        "category": "all Patterns&color"
     },
     {
         "src": "photos/22-23 11-03 Nov-Mar/_29_0954.jpg",
@@ -309,12 +309,12 @@
     {
         "src": "photos/22-23 11-03 Nov-Mar/_34_0959.jpg",
         "alt": "Atomium, Brussel", 
-        "category": "all geometric"
+        "category": "all Patterns&color"
     },
     {
         "src": "photos/22-23 11-03 Nov-Mar/_36_0953.jpg",
         "alt": "Marisa, Brussel", 
-        "category": "all poeple"
+        "category": "all people"
     }
 
 ]
