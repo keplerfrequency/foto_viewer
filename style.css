@@ -56,10 +56,18 @@
   margin-right: 10px; /* Add some space between buttons */
 }
 
+/* Style the active button */
+.active {
+  background-color: #d3d3d3;
+  color: white;
+}
 
-
-.wrapper{
-  top:20px;
+/*have carousel fill up all the space*/
+.carousel{
+  display: flex;
+  align-items: center;
+  height: 100%;
+  /*top: 200px;*/
 }
 
 /*Carousel*/
