@@ -71,28 +71,22 @@
 
 </body>
 
-<script>
+<script>  
     document.addEventListener('DOMContentLoaded', function () {
-        
-        fetch('photos.json').then(response => response.json()).then(data => {
-                    console.log('Loaded JSON data:', data);
-                    // Use 'data' here as needed
-                }).catch(error => console.error('Error loading JSON:', error));
-        
+    
         var splide = new Splide('#splide', {
             type   : 'loop',
             autoplay: true,
         });
         
-        
         splide.on('visible', function () {
             var currentIndex = splide.index;
             var currentSlideElement = splide.Components.Elements.slides[currentIndex];
             var imgElement = currentSlideElement.querySelector('img');
+            console.log("image changed");
             if (imgElement) {
                 var imgSrc = imgElement.getAttribute('src');
-                altText = findAltBySrc(imgSrc);
-                //put right text in place
+                findAltBySrc(imgSrc);
             }
 
 
