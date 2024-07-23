@@ -46,7 +46,7 @@
         <p>FOTOGRAFIA ANALÓGICA</p>
     </div>
 
-    <div class="button-scroll-container">
+    <div id="buttons" class="button-scroll-container">
         <ul id="button-repo" class="button-container">
             <script>generateButtons()</script>
             <!-- FILLED IN DYNAMICALLY-->
@@ -76,7 +76,7 @@
     
         fetchJson();
 
-        var splide = new Splide('#splide', {
+        splide = new Splide('#splide', {
             type   : 'loop',
             autoplay: true,
         });
@@ -94,6 +94,7 @@
         });
         
         splide.mount();
+
 
     });
 </script>

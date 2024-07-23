@@ -1,5 +1,7 @@
 let myPhotos = [];
 
+let splide = [];
+
 function fetchJson() {
 
   fetch('photos.json')
@@ -58,3 +60,38 @@ function getAltText(src) {
   myDiv.textContent = altText.toUpperCase();  
   return;
 }
+
+// Function to update the Splide carousel with new photos
+function updateSplideCarousel(category) {
+
+  console.log("going to update carousel with photos of " + category);
+  
+  let photos = getAllFotosCategory(category);
+
+  array = Array.from({ length: splide.length }, (_, index) => index);
+  splide.remove(array);
+
+  photos.forEach(photo => {
+    splide.add('<li class="splide__slide"><img src="' + photo + '"></li>');
+  });
+
+}
+
+function getAllFotosCategory(categora){
+
+  const photos = myPhotos.filter(photo => photo.category.toLowerCase().includes(categora.toLowerCase()));
+  const srcs = photos.map(photo => photo.src);
+
+  console.log(srcs);
+  return srcs;
+  
+}
+
+document.addEventListener("click", function(){
+  var clickedElement = event.target;
+  
+  if (clickedElement.closest('.category-btn')) {
+    var text = $(clickedElement).text();
+    updateSplideCarousel(text)
+  }
+});
