@@ -74,6 +74,8 @@
 <script>  
     document.addEventListener('DOMContentLoaded', function () {
     
+        fetchJson();
+
         var splide = new Splide('#splide', {
             type   : 'loop',
             autoplay: true,
@@ -83,10 +85,9 @@
             var currentIndex = splide.index;
             var currentSlideElement = splide.Components.Elements.slides[currentIndex];
             var imgElement = currentSlideElement.querySelector('img');
-            console.log("image changed");
             if (imgElement) {
                 var imgSrc = imgElement.getAttribute('src');
-                findAltBySrc(imgSrc);
+                getAltText(imgSrc);
             }
 
 

@@ -1,3 +1,25 @@
+let myPhotos = [];
+
+function fetchJson() {
+
+  fetch('photos.json')
+  .then(response => response.json())
+  .then(data => {
+    myPhotos = data.map(photo => { // Assign value to the global variable
+      return {
+        src: photo.src,
+        alt: photo.alt,
+        category: photo.category
+      };
+    });
+  })
+  .catch(error => {
+    callback(error, null);
+  });
+
+};
+
+
 function generateButtons(){
 
     let categories = [];
@@ -28,34 +50,11 @@ function generateButtons(){
   
   }
 
-function findAltBySrc(src){
-
-  fetch('photos.json')
-  .then(response => response.json())
-  .then(data => {
-    myPhotos = data.map(photo => { // Assign value to the global variable
-      return {
-        src: photo.src,
-        alt: photo.alt,
-        category: photo.category
-      };
-    });
-
-    let altText = getAltText(src, myPhotos);
-
-    const myDiv = document.getElementById('line_breaker');
-    myDiv.textContent = altText.toUpperCase();
-
-  })
-  .catch(error => {
-    callback(error, null);
-  });
-
-
-};
-
 //Looks through the myPhotos array and returns the alt
-function getAltText(src, myPhotos) {
-  let photo = myPhotos.find(photo => photo.src === src);  
-  return photo ? photo.alt : null;
+function getAltText(src) {
+  let photo = myPhotos.find(photo => photo.src === src);
+  altText = photo ? photo.alt: "Welcome :)";
+  const myDiv = document.getElementById('line_breaker');
+  myDiv.textContent = altText.toUpperCase();  
+  return;
 }
