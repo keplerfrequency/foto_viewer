@@ -55,7 +55,7 @@ function generateButtons(){
 //Looks through the myPhotos array and returns the alt
 function getAltText(src) {
   let photo = myPhotos.find(photo => photo.src === src);
-  altText = photo ? photo.alt: "Welcome :)";
+  altText = photo ? photo.alt: "Click on the categories to continue";
   const myDiv = document.getElementById('line_breaker');
   myDiv.textContent = altText.toUpperCase();  
   return;
