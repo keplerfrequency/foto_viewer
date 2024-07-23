@@ -63,8 +63,6 @@ function getAltText(src) {
 
 // Function to update the Splide carousel with new photos
 function updateSplideCarousel(category) {
-
-  console.log("going to update carousel with photos of " + category);
   
   let photos = getAllFotosCategory(category);
 
@@ -82,7 +80,6 @@ function getAllFotosCategory(categora){
   const photos = myPhotos.filter(photo => photo.category.toLowerCase().includes(categora.toLowerCase()));
   const srcs = photos.map(photo => photo.src);
 
-  console.log(srcs);
   return srcs;
   
 }
@@ -90,6 +87,8 @@ function getAllFotosCategory(categora){
 document.addEventListener("click", function(){
   var clickedElement = event.target;
   
+  console.log()
+
   if (clickedElement.closest('.category-btn')) {
     var text = $(clickedElement).text();
     updateSplideCarousel(text)
