@@ -9,6 +9,14 @@
     display: flex;
 }
 
+/*splide height*/
+.splide__slide{
+  max-width: 100vw;
+  margin: auto;
+  position:relative;
+
+}
+
 /*Alt text below*/
 #alt_text {
     position: fixed;
