@@ -15,6 +15,16 @@
         "category": "all nature biking"
     },
     {
+        "src": "photos/22-05-06-Mai-Jun/R1-09.JPG",
+        "alt": "Alexandre o barco\nBelgium", 
+        "category": "all biking"
+    },
+    {
+        "src": "photos/22-05-06-Mai-Jun/R1-09.JPG",
+        "alt": "Tim & Geoff the pause\nBelgium", 
+        "category": "all people biking"
+    },
+    {
         "src": "photos/22-05-06-Mai-Jun/R1-12.JPG",
         "alt": "Tim & Geoff\nBelgium", 
         "category": "all people biking"
@@ -23,6 +33,16 @@
         "src": "photos/22-05-06-Mai-Jun/R1-14.JPG",
         "alt": "Geoff\nBelgium", 
         "category": "all people biking"
+    },
+    {
+        "src": "photos/22-05-06-Mai-Jun/R1-14.JPG",
+        "alt": "Geoff and the first baguette\nFrance", 
+        "category": "all people biking towers"
+    },
+    {
+        "src": "photos/22-05-06-Mai-Jun/R1-14.JPG",
+        "alt": "camping at the river\nFrance", 
+        "category": "all biking"
     },
     {
         "src": "photos/22-05-06-Mai-Jun/R1-19.JPG",
@@ -81,9 +101,19 @@
         "category": "all biking"
     },
     {
+        "src": "photos/22-06-07-Jun-Jul/11_0847.jpg",
+        "alt": "o ninho\nportugal", 
+        "category": "all biking"
+    },
+    {
         "src": "photos/22-06-07-Jun-Jul/12_0848.jpg",
         "alt": "industria\nPortalegre", 
         "category": "all industry biking"
+    },
+    {
+        "src": "photos/22-06-07-Jun-Jul/13_0849.jpg",
+        "alt": "onde a terra se acaba\nPortalegre", 
+        "category": "all biking"
     },
     {
         "src": "photos/22-06-07-Jun-Jul/15_0851.jpg",
@@ -150,6 +180,11 @@
         "category": "all nature"
     },
     {
+        "src": "photos/22-07-08-Jul-Aug/11A_1101.jpg",
+        "alt": "shaky and blurry and crazy\nCrema",
+        "category": "all Patterns&color"
+    },
+    {
         "src": "photos/22-07-08-Jul-Aug/13A_1103.jpg",
         "alt": "Col des Alps\nFrance",
         "category": "all nature"
@@ -165,12 +200,27 @@
         "category": "all biking people"
     },
     {
+        "src": "photos/22-07-08-Jul-Aug/24A_1114.jpg",
+        "alt": "alexandre & tim\nslovenia",
+        "category": "all biking people"
+    },
+    {
         "src": "photos/22-07-08-Jul-Aug/25A_1115.jpg",
         "alt": "Stefano\nLake Bled",
         "category": "all biking people"
     },
     {
+        "src": "photos/22-07-08-Jul-Aug/26A_1116.jpg",
+        "alt": "Stefano & Tim planning\nLake Bled",
+        "category": "all biking people"
+    },
+    {
         "src": "photos/22-07-08-Jul-Aug/28A_1118.jpg",
+        "alt": "Tim\nSlovenia",
+        "category": "all people"
+    },
+    {
+        "src": "photos/22-07-08-Jul-Aug/29A_1119.jpg",
         "alt": "Tim\nSlovenia",
         "category": "all people"
     },
@@ -192,6 +242,11 @@
         "src": "photos/22-08-11-Aug-Nov/1_0759.jpg",
         "alt": "Botanic garden\nBerlin", 
         "category": "all Patterns&color"
+    },
+    {
+        "src": "photos/22-08-11-Aug-Nov/3_0761.jpg",
+        "alt": "Alexanderplaats\nBerlin", 
+        "category": "all towers"
     },
     {
         "src": "photos/22-08-11-Aug-Nov/4_0762.jpg",
@@ -219,6 +274,11 @@
         "category": "all people"
     },
     {
+        "src": "photos/22-08-11-Aug-Nov/14_0772.jpg",
+        "alt": "Alexandre & Sara\nAmsterdam", 
+        "category": "all people"
+    },
+    {
         "src": "photos/22-08-11-Aug-Nov/13_0771.jpg",
         "alt": "Haven\nLeiden",
         "category": "all pitoresco"
@@ -234,9 +294,19 @@
         "category": "all Patterns&color"
     },
     {
+        "src": "photos/22-08-11-Aug-Nov/23_0781.jpg",
+        "alt": "the happy couple\nDen Haag", 
+        "category": "all nature"
+    },
+    {
         "src": "photos/22-08-11-Aug-Nov/30_0788.jpg",
         "alt": "marisa\nAmsterdamse Waterleidingduinen", 
         "category": "all nature people"
+    },
+    {
+        "src": "photos/22-08-11-Aug-Nov/32_0790.jpg",
+        "alt": "Marisa\nduinen", 
+        "category": "all people"
     },
     {
         "src": "photos/22-08-11-Aug-Nov/33_0791.jpg",
@@ -272,6 +342,11 @@
         "category": "all pitoresco"
     },
     {
+        "src": "photos/22-23-11-03-Nov-Mar/13_0939.jpg",
+        "alt": "Arco iris\nalentejo", 
+        "category": "all pitoresco"
+    },
+    {
         "src": "photos/22-23-11-03-Nov-Mar/19_0945.jpg",
         "alt": "Moinhos\nUrk", 
         "category": "all pitoresco Patterns&color"
@@ -287,8 +362,18 @@
         "category": "all people"
     },
     {
+        "src": "photos/22-23-11-03-Nov-Mar/23_0949.jpg",
+        "alt": "old and new\nFrankfurt", 
+        "category": "all towers"
+    },
+    {
         "src": "photos/22-23-11-03-Nov-Mar/24_0950.jpg",
         "alt": "ECB\nFrankfurt", 
+        "category": "all towers"
+    },
+    {
+        "src": "photos/22-23-11-03-Nov-Mar/26_0952.jpg",
+        "alt": "Pisa maar in nederland\nLeeuwarden", 
         "category": "all towers"
     },
     {
@@ -302,7 +387,12 @@
         "category": "all pitoresco"
     },
     {
-        "src": "photos/22-23-11-03 03 Nov-Mar/33_0958.jpg",
+        "src": "photos/22-23-11-03-Nov-Mar/30_0955.jpg",
+        "alt": "Through the tunnel\nMiddelburg", 
+        "category": "all towers"
+    },
+    {
+        "src": "photos/22-23-11-03-Nov-Mar/33_0958.jpg",
         "alt": "Alex & Marisa\nBrussel", 
         "category": "all people"
     },
