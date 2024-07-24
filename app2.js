@@ -68,9 +68,16 @@ function updateSplideCarousel(category) {
   array = Array.from({ length: splide.length }, (_, index) => index);
   splide.remove(array);
 
+  fragment = [];
+
+  // Loop through each photo and push them into an array
   photos.forEach(photo => {
-    splide.add('<li class="splide__slide"><img src="' + photo + '"></li>');
+    const listItem = '<li class="splide__slide"><img src="' + photo + '"></li>\n'
+    
+    fragment.push(listItem)
   });
+
+  splide.add(fragment);
 
 }
 
