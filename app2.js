@@ -21,7 +21,6 @@ function fetchJson() {
 
 };
 
-
 function generateButtons(){
 
     let categories = [];
