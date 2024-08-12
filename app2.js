@@ -88,9 +88,8 @@ function getAllFotosCategory(categora){
 
   const photos = myPhotos.filter(photo => photo.category.toLowerCase().includes(categora.toLowerCase()));
   const srcs = photos.map(photo => photo.src);
-
+    
   return srcs;
-  
 }
 
 document.addEventListener("click", function(){
