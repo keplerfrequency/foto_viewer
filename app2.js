@@ -24,18 +24,21 @@ function fetchJson() {
 function generateButtons(){
 
     let categories = [];
-  
+
+    
     $.getJSON('photos.json', function(result) {
       $.each(result, function(i, foto){
-  
+        
         let allCategories = foto.category.split(' ')
-  
+        
         for (let i = 0; i < allCategories.length; i++) {
-            if(!categories.includes(allCategories[i])){
+          if(!categories.includes(allCategories[i])){
             categories.push(allCategories[i]);
           };
         }
       })
+      
+      categories.splice(1, 0, "Latest");
       
       let html = '';
     
