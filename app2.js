@@ -38,7 +38,7 @@ function generateButtons(){
         }
       })
       
-      categories.splice(1, 0, "Latest");
+      categories.splice(1, 0);
       
       let html = '';
     
