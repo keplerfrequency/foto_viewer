@@ -32,8 +32,9 @@ function generateButtons(){
         let allCategories = foto.category.split(' ')
         
         for (let i = 0; i < allCategories.length; i++) {
-          if(!categories.includes(allCategories[i])){
+          if(!categories.includes(allCategories[i]) && allCategories[i] != ""){
             categories.push(allCategories[i]);
+            console.log(categories);
           };
         }
       })
