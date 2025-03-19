@@ -1,9 +1,9 @@
 /* Buttons */
 .button-scroll-container {
+    flex-shrink: 0;
     overflow-x: auto; /* Enable horizontal scrolling */
     white-space: nowrap; /* Prevent line breaks */
     -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
-    height: 10%;
   }
   
   .button-container {
