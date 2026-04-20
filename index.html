@@ -25,7 +25,8 @@
 <body style="background-color: lightgray;">
     <div id="content">
         <div id="text_top" class="text_top">
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FOTOGRAFIA ANALÓGICA</p>
+            <p>FOTOGRAFIA ANALÓGICA</p>
+            <button id="info-button" class="info-button" type="button">i</button>
         </div>
 
         <div id="buttons" class="button-scroll-container">
@@ -38,13 +39,24 @@
         <div id="splide" class="splide">
             <div class="splide__track">
                 <ul class="splide__list">
-                    <li class="splide__slide"> <img src="photos/welcome.png"></li>
+                    <li class="splide__slide"> <img src="welcome.png"></li>
                 </ul>
+            </div>
+            <div class="slider-controls">
+                <button id="custom-splide-prev" class="arrow-btn" aria-label="Previous">‹</button>
+                <button id="custom-splide-next" class="arrow-btn" aria-label="Next">›</button>
             </div>
         </div>
 
         <div id="alt_text">
             <pre id="line_breaker"></pre>
+        </div>
+    </div>
+
+    <div id="info-popup" class="info-popup">
+        <div class="info-popup__content">
+            <p>Photos from my analog collection starting in 2022 until today. Thanks for visiting, Alexandre Gabriel. All rights reserved.</p>
+            <button id="info-popup-close" class="info-popup-close">Close</button>
         </div>
     </div>
 </body>
@@ -58,6 +70,8 @@
             type: 'loop',
             autoplay: true,
             pagination: false,
+            arrows: false,
+            keyboard: true,
             autowidth: true,
         });
 
@@ -69,12 +83,69 @@
                 var imgSrc = imgElement.getAttribute('src');
                 getAltText(imgSrc);
             }
-
-
         });
 
         splide.mount();
 
+        window.splide = splide;
+
+        var prevControl = document.getElementById('custom-splide-prev');
+        var nextControl = document.getElementById('custom-splide-next');
+        var infoButton = document.getElementById('info-button');
+        var infoPopup = document.getElementById('info-popup');
+        var infoPopupClose = document.getElementById('info-popup-close');
+
+        if (prevControl) {
+            prevControl.addEventListener('click', function (event) {
+                event.preventDefault();
+                splide.go('<');
+                setTimeout(function() {
+                  var currentIndex = splide.index;
+                  var currentSlideElement = splide.Components.Elements.slides[currentIndex];
+                  var imgElement = currentSlideElement.querySelector('img');
+                  if (imgElement) {
+                      var imgSrc = imgElement.getAttribute('src');
+                      getAltText(imgSrc);
+                  }
+                }, 0);
+            });
+        }
+
+        if (nextControl) {
+            nextControl.addEventListener('click', function (event) {
+                event.preventDefault();
+                splide.go('>');
+                setTimeout(function() {
+                  var currentIndex = splide.index;
+                  var currentSlideElement = splide.Components.Elements.slides[currentIndex];
+                  var imgElement = currentSlideElement.querySelector('img');
+                  if (imgElement) {
+                      var imgSrc = imgElement.getAttribute('src');
+                      getAltText(imgSrc);
+                  }
+                }, 0);
+            });
+        }
+
+        if (infoButton) {
+            infoButton.addEventListener('click', function () {
+                infoPopup.classList.add('visible');
+            });
+        }
+
+        if (infoPopupClose) {
+            infoPopupClose.addEventListener('click', function () {
+                infoPopup.classList.remove('visible');
+            });
+        }
+
+        if (infoPopup) {
+            infoPopup.addEventListener('click', function (event) {
+                if (event.target === infoPopup) {
+                    infoPopup.classList.remove('visible');
+                }
+            });
+        }
 
     });
 </script>

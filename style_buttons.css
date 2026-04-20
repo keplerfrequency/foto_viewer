@@ -4,6 +4,8 @@
     overflow-x: auto; /* Enable horizontal scrolling */
     white-space: nowrap; /* Prevent line breaks */
     -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
+    background-color: rgb(211, 211, 211);
+    padding: 10px 0;
   }
   
   .button-container {
