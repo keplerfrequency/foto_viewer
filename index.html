@@ -47,9 +47,12 @@
                 <button id="custom-splide-next" class="arrow-btn" aria-label="Next">›</button>
             </div>
         </div>
-
-        <div id="alt_text">
-            <pre id="line_breaker"></pre>
+        <div id="photo-counter"></div>
+        <div id="photo-footer">
+            
+            <div id="alt_text">
+                <pre id="line_breaker"></pre>
+            </div>
         </div>
     </div>
 
@@ -83,11 +86,20 @@
                 var imgSrc = imgElement.getAttribute('src');
                 getAltText(imgSrc);
             }
+            updatePhotoCounter();
         });
 
         splide.mount();
 
         window.splide = splide;
+
+        // Double-click to download
+        var splideElement = document.getElementById('splide');
+        if (splideElement) {
+            splideElement.addEventListener('dblclick', function() {
+                downloadCurrentPhoto();
+            });
+        }
 
         var prevControl = document.getElementById('custom-splide-prev');
         var nextControl = document.getElementById('custom-splide-next');
@@ -107,6 +119,7 @@
                       var imgSrc = imgElement.getAttribute('src');
                       getAltText(imgSrc);
                   }
+                  updatePhotoCounter();
                 }, 0);
             });
         }
@@ -123,6 +136,7 @@
                       var imgSrc = imgElement.getAttribute('src');
                       getAltText(imgSrc);
                   }
+                  updatePhotoCounter();
                 }, 0);
             });
         }
