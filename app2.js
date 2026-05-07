@@ -15,11 +15,10 @@ function fetchJson() {
   fetch('fotos_website.json')
   .then(response => response.json())
   .then(data => {
-    myPhotos = Object.entries(data.photos).map(([path, photoData]) => {
+    myPhotos = Object.entries(data).map(([path, photoData]) => {
       return {
         src: 'website_photos/' + path,
-        name: photoData.name || "",
-        alt: photoData.name || "Click on \nthe categories to continue",
+        alt: photoData.title || "Click on \nthe categories to continue",
         city: photoData.city || "",
         country: photoData.country || "",
         categories: Array.isArray(photoData.categories) ? photoData.categories : []
@@ -40,7 +39,7 @@ function generateButtons(){
     $.getJSON('fotos_website.json', function(result) {
       // Find all folder names in the format YYYY-MM from photo paths
       let folderSet = new Set();
-      $.each(result.photos, function(path, foto){
+      $.each(result, function(path, foto){
         // Extract folder from path (e.g., 2026-04/filename.jpg)
         let match = path.match(/^([0-9]{4}-[0-9]{2})\//);
         if (match) {
