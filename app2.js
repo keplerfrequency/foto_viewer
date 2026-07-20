@@ -113,8 +113,7 @@ function updateSplideCarousel(category) {
 
   // Loop through each photo and push them into an array
   photos.forEach(photo => {
-    const listItem = '<li class="splide__slide"><img src="' + photo + '"></li>\n'
-    
+    const listItem = '<li class="splide__slide"><img src="' + photo + '" loading="lazy"></li>\n'
     fragment.push(listItem)
   });
 

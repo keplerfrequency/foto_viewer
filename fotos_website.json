@@ -66,7 +66,7 @@
         "filename": "R1-09.JPG",
         "city": "",
         "country": "Belgie",
-        "title": "Alexandre o barco",
+        "title": "Alexandre & barco",
         "categories": [
             "Biking",
             "Boats"
@@ -92,8 +92,8 @@
     },
     "2024-09/000032.JPG": {
         "filename": "000032.JPG",
-        "city": "",
-        "country": "Unknown",
+        "city": "Berlin",
+        "country": "Germany",
         "title": "old and new",
         "categories": [
             "Towers"
@@ -408,7 +408,7 @@
         "filename": "000031.JPG",
         "city": "Brussel",
         "country": "Belgie",
-        "title": "bar",
+        "title": "BX bar",
         "categories": [
             "Pitoresco"
         ]
@@ -611,7 +611,7 @@
         "filename": "000013.JPG",
         "city": "Berlin",
         "country": "Germany",
-        "title": "Alexander",
+        "title": "Alexandertra\u00dfe",
         "categories": [
             "Pitoresco"
         ]
@@ -841,7 +841,7 @@
         "filename": "R1-25~2.JPG",
         "city": "",
         "country": "France",
-        "title": "nuclear",
+        "title": "nuclear france",
         "categories": [
             "Biking",
             "Towers"
@@ -1366,7 +1366,7 @@
         "filename": "000028.JPG",
         "city": "",
         "country": "Germany",
-        "title": "Rugen",
+        "title": "R\u00fcgen",
         "categories": [
             "Nature",
             "Biking"
@@ -1523,7 +1523,7 @@
         "filename": "10A_1100.jpg",
         "city": "",
         "country": "Italy",
-        "title": "po, tilted",
+        "title": "po (tilted)",
         "categories": [
             "Nature"
         ]
@@ -1662,7 +1662,7 @@
         "filename": "R1-07.JPG",
         "city": "Brussel",
         "country": "Belgie",
-        "title": "",
+        "title": "hier wacht ik netjes op mijn basje",
         "categories": [
             "People",
             "Biking"
@@ -1682,7 +1682,7 @@
         "filename": "000034.JPG",
         "city": "Marv\u00e3o",
         "country": "Portugal",
-        "title": "rua i",
+        "title": "rua marvao i",
         "categories": [
             "Pitoresco"
         ]
@@ -2245,7 +2245,7 @@
         "filename": "34_0959.jpg",
         "city": "Brussel",
         "country": "Belgie",
-        "title": "atomium",
+        "title": "atomium i",
         "categories": [
             "patterns&color"
         ]
@@ -2805,7 +2805,7 @@
         "filename": "000026.JPG",
         "city": "Castelo de vide",
         "country": "Portugal",
-        "title": "rua ii",
+        "title": "rua marvao ii",
         "categories": [
             "Pitoresco"
         ]
@@ -3156,7 +3156,7 @@
         "filename": "000034.JPG",
         "city": "Rotterdam",
         "country": "Nederland",
-        "title": "so rotterdam!",
+        "title": "zo rotterdam!",
         "categories": [
             "Pitoresco",
             "Industrial"
@@ -3238,7 +3238,7 @@
         "filename": "35_0960.jpg",
         "city": "Brussel",
         "country": "Belgie",
-        "title": "atomium2",
+        "title": "atomium ii",
         "categories": [
             "patterns&color"
         ]
@@ -3468,7 +3468,7 @@
         "filename": "000014.JPG",
         "city": "",
         "country": "Nederland",
-        "title": "PA3",
+        "title": "PA3 i",
         "categories": [
             "Pitoresco",
             "Boats"
@@ -3487,7 +3487,7 @@
         "filename": "000022.JPG",
         "city": "London",
         "country": "England",
-        "title": "sain panx",
+        "title": "saint panx",
         "categories": [
             "patterns&color"
         ]
@@ -3496,7 +3496,7 @@
         "filename": "000015.JPG",
         "city": "",
         "country": "Nederland",
-        "title": "PA3",
+        "title": "PA3 ii",
         "categories": [
             "Boats"
         ]
@@ -3514,7 +3514,7 @@
         "filename": "000023.JPG",
         "city": "London",
         "country": "England",
-        "title": "endless waterloo ",
+        "title": "endless waterloo",
         "categories": [
             "patterns&color",
             "Industrial"
@@ -4091,7 +4091,7 @@
         "filename": "000016.JPG",
         "city": "Livigno",
         "country": "Italy",
-        "title": "amatt & alexandre & the sunbathing",
+        "title": "matt & alexandre & the sunbathing",
         "categories": []
     },
     "2026-05/000017.JPG": {
@@ -4153,7 +4153,7 @@
         "filename": "000035.JPG",
         "city": "",
         "country": "England",
-        "title": "i hear theosevoices that will not be drowned",
+        "title": "i hear those voices that will not be drowned",
         "categories": [
             "Biking",
             "Pitoresco"
@@ -4325,7 +4325,7 @@
         "filename": "000030.JPG",
         "city": "Geat Yarmouth",
         "country": "England",
-        "title": "",
+        "title": "the gasworks",
         "categories": [
             "Industrial"
         ]
@@ -4985,6 +4985,282 @@
         "title": "Tim & the mural",
         "categories": [
             "Biking"
+        ]
+    },
+    "2026-08/000029.JPG": {
+        "filename": "000029.JPG",
+        "city": "Makry Gialos",
+        "country": "Greece",
+        "title": "water berghain outfit",
+        "categories": [
+            "People"
+        ]
+    },
+    "2026-08/000032.JPG": {
+        "filename": "000032.JPG",
+        "city": "Makry Gialos",
+        "country": "Greece",
+        "title": "Stone throwing",
+        "categories": [
+            "People"
+        ]
+    },
+    "2026-08/000031.JPG": {
+        "filename": "000031.JPG",
+        "city": "Makry Gialos",
+        "country": "Greece",
+        "title": "The boys",
+        "categories": [
+            "People"
+        ]
+    },
+    "2026-08/000018.JPG": {
+        "filename": "000018.JPG",
+        "city": "Makry Gialos",
+        "country": "Greece",
+        "title": "Cretan truck",
+        "categories": [
+            "Random"
+        ]
+    },
+    "2026-08/000039.JPG": {
+        "filename": "000039.JPG",
+        "city": "Makry Gialos",
+        "country": "Greece",
+        "title": "Jump I",
+        "categories": []
+    },
+    "2026-08/000034.JPG": {
+        "filename": "000034.JPG",
+        "city": "",
+        "country": "Greece",
+        "title": "cute road church",
+        "categories": [
+            "Pitoresco"
+        ]
+    },
+    "2026-08/000040.JPG": {
+        "filename": "000040.JPG",
+        "city": "Makry Gialos",
+        "country": "Greece",
+        "title": "Iris",
+        "categories": [
+            "People"
+        ]
+    },
+    "2026-08/000043.JPG": {
+        "filename": "000043.JPG",
+        "city": "Makry Gialos",
+        "country": "Greece",
+        "title": "Giorgios & the big fish",
+        "categories": [
+            "People"
+        ]
+    },
+    "2026-08/000030.JPG": {
+        "filename": "000030.JPG",
+        "city": "Makry Gialos",
+        "country": "Greece",
+        "title": "view from the parasol",
+        "categories": [
+            "Pitoresco"
+        ]
+    },
+    "2026-08/000008.JPG": {
+        "filename": "000008.JPG",
+        "city": "Berlin",
+        "country": "Germany",
+        "title": "Exposed metro Felix",
+        "categories": [
+            "People"
+        ]
+    },
+    "2026-08/000013.JPG": {
+        "filename": "000013.JPG",
+        "city": "Agios Nikolaos",
+        "country": "Greece",
+        "title": "Greek staircase",
+        "categories": [
+            "Pitoresco"
+        ]
+    },
+    "2026-08/000028.JPG": {
+        "filename": "000028.JPG",
+        "city": "Makry Gialos",
+        "country": "Greece",
+        "title": "flag",
+        "categories": [
+            "Pitoresco"
+        ]
+    },
+    "2026-08/000037.JPG": {
+        "filename": "000037.JPG",
+        "city": "Sitia",
+        "country": "Greece",
+        "title": "adorable",
+        "categories": [
+            "Boats"
+        ]
+    },
+    "2026-08/000015.JPG": {
+        "filename": "000015.JPG",
+        "city": "Agios Nikolaos",
+        "country": "Greece",
+        "title": "\u03a0\u03b1\u03c1\u03b1\u03bb\u03af\u03b1 \u0392\u03bf\u03cd\u03bb\u03b9\u03c3\u03bc\u03b1",
+        "categories": [
+            "Nature"
+        ]
+    },
+    "2026-08/000019.JPG": {
+        "filename": "000019.JPG",
+        "city": "Makry Gialos",
+        "country": "Greece",
+        "title": "Mina's Palace Taverna",
+        "categories": [
+            "Pitoresco"
+        ]
+    },
+    "2026-08/000012.JPG": {
+        "filename": "000012.JPG",
+        "city": "Knossos",
+        "country": "Greece",
+        "title": "Matt & Marisa & Jimena",
+        "categories": [
+            "People"
+        ]
+    },
+    "2026-08/000026.JPG": {
+        "filename": "000026.JPG",
+        "city": "Makry Gialos",
+        "country": "Greece",
+        "title": "Alexandre radical ii",
+        "categories": [
+            "People"
+        ]
+    },
+    "2026-08/000025.JPG": {
+        "filename": "000025.JPG",
+        "city": "Makry Gialos",
+        "country": "",
+        "title": "Marisa & the coast",
+        "categories": [
+            "People"
+        ]
+    },
+    "2026-08/000036.JPG": {
+        "filename": "000036.JPG",
+        "city": "",
+        "country": "Greece",
+        "title": "Dionysos Village",
+        "categories": [
+            "Random"
+        ]
+    },
+    "2026-08/000027.JPG": {
+        "filename": "000027.JPG",
+        "city": "",
+        "country": "Greece",
+        "title": "the projects",
+        "categories": [
+            "Random"
+        ]
+    },
+    "2026-08/000010.JPG": {
+        "filename": "000010.JPG",
+        "city": "Knossos",
+        "country": "",
+        "title": "Look into the camera please",
+        "categories": [
+            "Nature"
+        ]
+    },
+    "2026-08/000044.JPG": {
+        "filename": "000044.JPG",
+        "city": "Ierapetra",
+        "country": "",
+        "title": "odd balconies",
+        "categories": [
+            "Towers"
+        ]
+    },
+    "2026-08/000038.JPG": {
+        "filename": "000038.JPG",
+        "city": "Sitia",
+        "country": "Greece",
+        "title": "Stadium seating",
+        "categories": [
+            "patterns&color"
+        ]
+    },
+    "2026-08/000042.JPG": {
+        "filename": "000042.JPG",
+        "city": "Makry Gialos",
+        "country": "Greece",
+        "title": "Iris & Mila",
+        "categories": [
+            "People"
+        ]
+    },
+    "2026-08/000033.JPG": {
+        "filename": "000033.JPG",
+        "city": "Makry Gialos",
+        "country": "Greece",
+        "title": "dream boat",
+        "categories": [
+            "Boats",
+            "Pitoresco"
+        ]
+    },
+    "2026-08/000035.JPG": {
+        "filename": "000035.JPG",
+        "city": "",
+        "country": "Greece",
+        "title": "PLNT.X",
+        "categories": [
+            "Random"
+        ]
+    },
+    "2026-08/000021.JPG": {
+        "filename": "000021.JPG",
+        "city": "\u0392\u03cc\u03b9\u03bb\u03b1",
+        "country": "Greece",
+        "title": "Marisa & Matt & Jimena",
+        "categories": [
+            "People"
+        ]
+    },
+    "2026-08/000017.JPG": {
+        "filename": "000017.JPG",
+        "city": "Makry Gialos",
+        "country": "Greece",
+        "title": "alexandre & mila",
+        "categories": []
+    },
+    "2026-08/000024.JPG": {
+        "filename": "000024.JPG",
+        "city": "Makry Gialos",
+        "country": "Greece",
+        "title": "Alexandre radical I",
+        "categories": [
+            "People"
+        ]
+    },
+    "2026-08/000041.JPG": {
+        "filename": "000041.JPG",
+        "city": "Makry Gialos",
+        "country": "Greece",
+        "title": "Jump II",
+        "categories": [
+            "People"
+        ]
+    },
+    "2026-08/000020.JPG": {
+        "filename": "000020.JPG",
+        "city": "\u0392\u03cc\u03b9\u03bb\u03b1",
+        "country": "Greece",
+        "title": "Matt & his cool pose",
+        "categories": [
+            "People"
         ]
     }
 }
