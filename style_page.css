@@ -30,11 +30,27 @@ html, body {
     font-size: 1rem;
 }
 
-.info-button {
+/* Top-right icon group inside #text_top */
+.top-buttons {
   position: absolute;
-  right: 36px; /* moved 20px more to the left */
-  width: 28px;
-  height: 28px;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 10;
+}
+
+.top-icon {
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+}
+
+.info-button {
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   border: none;
   background-color: rgb(211, 211, 211);
@@ -45,6 +61,7 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0;
 }
 
 #splide {

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>World Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" type="text/css" href="style_page.css" media="all" />
+    <style>
+        /* Ensure map fills the available space between header and footer */
+        #map {
+            width: 100%;
+            height: 100%;
+            min-height: 200px;
+        }
+        .map-container {
+            flex: 1 1 auto;
+            display: flex;
+            min-height: 0; /* allow children to shrink inside flex column */
+        }
+        /* Modal main image fixed sizing and image scaling for stable layout */
+        #world-modal-main-image {
+            width: 90vw;
+            max-width: 720px;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+        }
+        img.modal-img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <div id="text_top" class="text_top">
+            <p>WORLD MAP</p>
+            <div class="top-buttons">
+                <a href="index.html" title="Home">
+                    <img src="world.png" alt="Home" class="top-icon">
+                </a>
+            </div>
+        </div>
+
+        <div class="map-container">
+            <div id="map"></div>
+        </div>
+
+        <div id="photo-footer">
+            <div id="alt_text">
+                <pre id="line_breaker"></pre>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="world.js"></script>
+
+    <!-- Full-page modal for photo viewer -->
+    <div id="world-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:2000;align-items:center;justify-content:center;">
+        <div id="world-modal-box" style="background:#000;border:6px solid #222;max-width:96vw;max-height:96vh;overflow:hidden;position:relative;box-shadow:0 4px 24px rgba(0,0,0,0.6);">
+            <button id="world-modal-close" aria-label="Close" style="position:absolute;right:8px;top:8px;background:#d3d3d3;border:none;border-radius:50%;width:32px;height:32px;cursor:pointer;font-weight:bold;">✕</button>
+            <div id="world-modal-content" style="display:flex;flex-direction:column;gap:8px;padding:12px;color:azure;font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;">
+                <div id="world-modal-main" style="display:flex;flex-direction:column;align-items:center;max-height:65vh;overflow:hidden;">
+                    <h2 id="world-modal-title" style="margin:0 0 8px 0;font-size:1.1rem;text-align:center;"></h2>
+                    <div id="world-modal-main-image" style="max-width:90vw;max-height:60vh;display:flex;align-items:center;justify-content:center;">
+                    </div>
+                </div>
+                <div id="world-modal-thumbs" style="display:flex;gap:8px;overflow-x:auto;padding-bottom:8px;">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
