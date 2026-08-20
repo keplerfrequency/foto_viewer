@@ -48,6 +48,21 @@ html, body {
   display: inline-block;
 }
 
+/* Ensure all top icons (including the info image) are vertically centered */
+.top-icon { vertical-align: middle; }
+
+/* When the info icon is an <img>, override the button-like styles */
+img.info-button {
+  background: transparent !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  display: inline-block !important;
+  width: 32px;
+  height: 32px;
+  vertical-align: middle !important;
+  box-shadow: none !important;
+}
+
 .info-button {
   width: 32px;
   height: 32px;

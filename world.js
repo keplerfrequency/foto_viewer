@@ -32,8 +32,11 @@ document.addEventListener('DOMContentLoaded', async function () {
     // Hardcoded Dutch city coordinates to avoid occasional geocoding errors
     const hardcodedDutchCities = {
         'Drachten': [53.1111, 6.0975],
-        'dr888': [53.1111, 6.0975],
-        'Enkhuizen': [52.7050, 5.2860]
+        'Dr888': [53.1111, 6.0975],
+        'Enkhuizen': [52.7050, 5.2860],
+        // Add Leeuwarden variants (Friesland)
+        'Leeuwarden': [53.2012, 5.7999],
+        'Leeuwaarden': [53.2012, 5.7999]
     };
 
     async function getCountryCoords(name) {
@@ -132,10 +135,10 @@ document.addEventListener('DOMContentLoaded', async function () {
         }
     });
 
-    // Initialize Leaflet map
+    // Initialize Leaflet map — default center on Luxembourg to show most of Europe
     const map = L.map('map', {
-        center: [20, 0],
-        zoom: 2,
+        center: [49.8153, 6.1296], // Luxembourg
+        zoom: 5,
         minZoom: 2
     });
 
@@ -146,15 +149,30 @@ document.addEventListener('DOMContentLoaded', async function () {
     }).addTo(map);
 
     const allMarkerCoords = [];
+    // marker cluster group to reduce clutter at low zoom
+    const clusterGroup = L.markerClusterGroup({
+        chunkedLoading: true,
+        iconCreateFunction: function(cluster) {
+            // Sum photoCount across all child (leaf) markers so cluster shows total photos
+            const markers = cluster.getAllChildMarkers();
+            const totalPhotos = markers.reduce((s, m) => s + (m.photoCount || 0), 0);
+            const size = 40;
+            const html = `<div style="background:#d3d3d3;color:#000;border:2px solid #a9a9a9;border-radius:50%;width:${size}px;height:${size}px;display:flex;align-items:center;justify-content:center;font-weight:700;font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;">${totalPhotos}</div>`;
+            return L.divIcon({ html: html, className: 'custom-cluster-icon', iconSize: L.point(size, size) });
+        }
+    });
+
+    // fallback coords for unknown places (IJsselmeer)
+    const ijsselmeerCoords = [52.6, 5.3];
 
     // Add country markers (non-Nederland)
     for (const country of Object.keys(photosByCountry)) {
         const list = photosByCountry[country];
         const count = list.length;
-        const coords = await getCountryCoords(country);
+        let coords = await getCountryCoords(country);
         if (!coords) {
-            console.warn('no coords for country', country);
-            continue;
+            console.warn('no coords for country', country, ' — placing in IJsselmeer');
+            coords = ijsselmeerCoords;
         }
         allMarkerCoords.push(coords);
         const radius = 10; // fixed radius for consistent appearance
@@ -164,7 +182,11 @@ document.addEventListener('DOMContentLoaded', async function () {
             weight: 1,
             fillColor: '#d3d3d3',
             fillOpacity: 0.9
-        }).addTo(map);
+        });
+        marker.photoCount = count;
+        clusterGroup.addLayer(marker);
+        // show count in center
+        marker.bindTooltip(String(count), { permanent: true, className: 'map-count-label', direction: 'center', offset: [0,0] });
         const handler = function () {
             map.setView(coords, 4);
             const sorted = list.slice().sort((a,b)=> (a.date||'').localeCompare(b.date||''));
@@ -174,9 +196,11 @@ document.addEventListener('DOMContentLoaded', async function () {
         marker.on('touchstart', handler);
     }
 
+    // add cluster group to map
+    clusterGroup.addTo(map);
+
     // Handle Nederland: group by city using city geocoding; fallback to IJsselmeer for empty city
     const cityBuckets = {}; // cityName -> { coords, items: [] }
-    const ijsselmeerCoords = [52.6, 5.3];
 
     for (const entry of netherlandsPhotos) {
         const city = entry.city;
@@ -221,7 +245,11 @@ document.addEventListener('DOMContentLoaded', async function () {
             weight: 1,
             fillColor: '#d3d3d3',
             fillOpacity: 0.9
-        }).addTo(map);
+        });
+        marker.photoCount = count;
+        clusterGroup.addLayer(marker);
+        // show count only
+        marker.bindTooltip(String(count), { permanent: true, className: 'map-count-label', direction: 'center', offset: [0,0] });
         const handler = function () {
             map.setView(coords, 10);
             const sorted = bucket.items.slice().sort((a,b)=> (a.date||'').localeCompare(b.date||''));
@@ -231,11 +259,12 @@ document.addEventListener('DOMContentLoaded', async function () {
         marker.on('touchstart', handler);
     }
 
-    // Fit to markers
-    if (allMarkerCoords.length) {
-        const bounds = L.latLngBounds(allMarkerCoords);
-        map.fitBounds(bounds.pad(0.25));
-    }
+    // Do not auto-fit to all markers by default — keep initial view centered on Luxembourg
+    // If you want auto-fitting, uncomment the next block.
+    // if (allMarkerCoords.length) {
+    //     const bounds = L.latLngBounds(allMarkerCoords);
+    //     map.fitBounds(bounds.pad(0.25));
+    // }
 
     // Helper to render HTML list for photos (chronological asc)
     function renderPhotoListHTML(list) {

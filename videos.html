@@ -9,7 +9,7 @@
         #video-list { padding: 12px; display:flex; flex-direction:column; }
         .video-item { margin-bottom: 16px; }
         .video-item iframe { width: 100%; height: 320px; border: none; }
-        .video-section h3 { color: azure; margin: 8px 0 6px 0; font-family: Consolas, Menlo, Monaco, monospace; }
+        .video-section h3 { color: black; margin: 8px 0 6px 0; font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif; text-transform: uppercase; }
     </style>
 </head>
 <body>
@@ -26,19 +26,19 @@
                 <a href="videos.html" title="Videos">
                     <img src="icons/videos.png" alt="Videos" class="top-icon">
                 </a>
-                <button id="info-button" class="info-button" title="Info" type="button"><img src="icons/i.png" alt="Info" style="width:18px;height:18px;display:block;margin:0 auto;"/></button>
+                <img id="info-button" src="icons/i.png" alt="Info" title="Info" class="top-icon">
             </div>
         </div>
 
-        <div id="video-list" style="flex:1 1 auto; overflow:auto; background: black; padding-top:12px;">
+        <div id="video-list" style="flex:1 1 auto; overflow:auto; background: #d3d3d3; padding-top:12px;">
             <div class="video-section" style="max-width:960px;margin:0 auto;padding:0 12px;">
-                <h3>Vacation</h3>
+                <h3>férias</h3>
                 <ul id="video-urls-vacation" style="list-style:none;padding:0;margin:0;">
                     <li>https://www.youtube.com/watch?v=KOWRRB9-1IQ</li>
                     <li>https://www.youtube.com/watch?v=KOWRRB9-1IQ</li>
                 </ul>
 
-                <h3>Cycling</h3>
+                <h3>fietsen</h3>
                 <ul id="video-urls-cycling" style="list-style:none;padding:0;margin:0;">
                     <li>https://www.youtube.com/watch?v=KOWRRB9-1IQ</li>
                     <li>https://www.youtube.com/watch?v=KOWRRB9-1IQ</li>
@@ -91,7 +91,7 @@
     <!-- Info popup (same as index) -->
     <div id="info-popup" class="info-popup">
         <div class="info-popup__content">
-            <p>Photos from my analog collection starting in 2022 until today. Thanks for visiting, Alexandre Gabriel. All rights reserved.</p>
+            <p>Collection of videos I have made in the past few years. Thanks for visiting, Alexandre Gabriel. All rights reserved.</p>
             <button id="info-popup-close" class="info-popup-close">Close</button>
         </div>
     </div>

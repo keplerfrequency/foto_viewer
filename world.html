@@ -37,12 +37,33 @@
             display: block;
             margin: 0 auto;
         }
+        /* Map label / count styling */
+        .leaflet-tooltip.map-count-label {
+            background: transparent;
+            border: none;
+            box-shadow: none;
+            color: black;
+            font-weight: 700;
+            font-size: 12px;
+            padding: 0;
+            line-height: 1;
+            font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+        }
+        .leaflet-tooltip.map-name-label {
+            background: rgba(255,255,255,0.9);
+            color: black;
+            border-radius: 4px;
+            padding: 2px 6px;
+            font-size: 12px;
+            font-weight: 700;
+            font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+        }
     </style>
 </head>
 <body>
     <div id="content">
         <div id="text_top" class="text_top">
-            <p>WORLD MAP</p>
+            <p>MAPA</p>
             <div class="top-buttons">
                 <a href="index.html" title="Fotos">
                     <img src="icons/fotos.png" alt="Fotos" class="top-icon">
@@ -53,7 +74,7 @@
                 <a href="videos.html" title="Videos">
                     <img src="icons/videos.png" alt="Videos" class="top-icon">
                 </a>
-                    <button id="info-button" class="info-button" title="Info" type="button"><img src="icons/i.png" alt="Info" style="width:18px;height:18px;display:block;margin:0 auto;"/></button>
+                    <img id="info-button" src="icons/i.png" alt="Info" title="Info" class="top-icon info-button">
             </div>
         </div>
 
@@ -69,6 +90,9 @@
     </div>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
     <script src="world.js"></script>
 
         <!-- Info popup (same as index) -->
