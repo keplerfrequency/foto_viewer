@@ -33,7 +33,7 @@ html, body {
 /* Top-right icon group inside #text_top */
 .top-buttons {
   position: absolute;
-  right: 12px;
+  right: 28px;
   top: 50%;
   transform: translateY(-50%);
   display: flex;

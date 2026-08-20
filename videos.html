@@ -5,10 +5,112 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Videos</title>
     <link rel="stylesheet" type="text/css" href="style_page.css" />
+    <style>
+        #video-list { padding: 12px; display:flex; flex-direction:column; }
+        .video-item { margin-bottom: 16px; }
+        .video-item iframe { width: 100%; height: 320px; border: none; }
+        .video-section h3 { color: azure; margin: 8px 0 6px 0; font-family: Consolas, Menlo, Monaco, monospace; }
+    </style>
 </head>
 <body>
-    <h1>Videos</h1>
-    <p>This page is intentionally left blank for now.</p>
-    <p><a href="index.html">Back</a></p>
+    <div id="content">
+        <div id="text_top" class="text_top">
+            <p>VIDEOS</p>
+            <div class="top-buttons">
+                <a href="index.html" title="Fotos">
+                    <img src="icons/fotos.png" alt="Fotos" class="top-icon">
+                </a>
+                <a href="world.html" title="World">
+                    <img src="icons/world.png" alt="World" class="top-icon">
+                </a>
+                <a href="videos.html" title="Videos">
+                    <img src="icons/videos.png" alt="Videos" class="top-icon">
+                </a>
+                <button id="info-button" class="info-button" title="Info" type="button"><img src="icons/i.png" alt="Info" style="width:18px;height:18px;display:block;margin:0 auto;"/></button>
+            </div>
+        </div>
+
+        <div id="video-list" style="flex:1 1 auto; overflow:auto; background: black; padding-top:12px;">
+            <div class="video-section" style="max-width:960px;margin:0 auto;padding:0 12px;">
+                <h3>Vacation</h3>
+                <ul id="video-urls-vacation" style="list-style:none;padding:0;margin:0;">
+                    <li>https://www.youtube.com/watch?v=KOWRRB9-1IQ</li>
+                    <li>https://www.youtube.com/watch?v=KOWRRB9-1IQ</li>
+                </ul>
+
+                <h3>Cycling</h3>
+                <ul id="video-urls-cycling" style="list-style:none;padding:0;margin:0;">
+                    <li>https://www.youtube.com/watch?v=KOWRRB9-1IQ</li>
+                    <li>https://www.youtube.com/watch?v=KOWRRB9-1IQ</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="photo-footer">
+            <div id="alt_text"><pre id="line_breaker"></pre></div>
+        </div>
+    </div>
+
+    <script>
+    function extractYouTubeID(url) {
+        try {
+            const u = new URL(url.trim());
+            if (u.hostname.includes('youtu.be')) return u.pathname.slice(1);
+            if (u.hostname.includes('youtube.com')) return u.searchParams.get('v');
+        } catch (e) {
+            // fallback parse
+            const m = url.match(/[?&]v=([\w-]+)/);
+            if (m) return m[1];
+            const m2 = url.match(/youtu\.be\/([\w-]+)/);
+            if (m2) return m2[1];
+        }
+        return null;
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const lis = Array.from(document.querySelectorAll('#video-urls-vacation li, #video-urls-cycling li'));
+        lis.forEach(li => {
+            const url = li.textContent.trim();
+            const id = extractYouTubeID(url);
+            const wrapper = document.createElement('div');
+            wrapper.className = 'video-item';
+            if (id) {
+                const iframe = document.createElement('iframe');
+                iframe.src = 'https://www.youtube.com/embed/' + id;
+                iframe.setAttribute('allowfullscreen','');
+                wrapper.appendChild(iframe);
+            } else {
+                wrapper.textContent = 'Invalid YouTube URL: ' + url;
+            }
+            li.innerHTML = '';
+            li.appendChild(wrapper);
+        });
+    });
+    </script>
+
+    <!-- Info popup (same as index) -->
+    <div id="info-popup" class="info-popup">
+        <div class="info-popup__content">
+            <p>Photos from my analog collection starting in 2022 until today. Thanks for visiting, Alexandre Gabriel. All rights reserved.</p>
+            <button id="info-popup-close" class="info-popup-close">Close</button>
+        </div>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var infoButton = document.getElementById('info-button');
+        var infoPopup = document.getElementById('info-popup');
+        var infoPopupClose = document.getElementById('info-popup-close');
+        if (infoButton) {
+            infoButton.addEventListener('click', function () { infoPopup.classList.add('visible'); });
+        }
+        if (infoPopupClose) {
+            infoPopupClose.addEventListener('click', function () { infoPopup.classList.remove('visible'); });
+        }
+        if (infoPopup) {
+            infoPopup.addEventListener('click', function (event) { if (event.target === infoPopup) infoPopup.classList.remove('visible'); });
+        }
+    });
+    </script>
 </body>
 </html>

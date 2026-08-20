@@ -29,6 +29,13 @@ document.addEventListener('DOMContentLoaded', async function () {
         localStorage.setItem(cityCacheKey, JSON.stringify(cityCoordsCache));
     }
 
+    // Hardcoded Dutch city coordinates to avoid occasional geocoding errors
+    const hardcodedDutchCities = {
+        'Drachten': [53.1111, 6.0975],
+        'dr888': [53.1111, 6.0975],
+        'Enkhuizen': [52.7050, 5.2860]
+    };
+
     async function getCountryCoords(name) {
         if (!name) return null;
         if (countryCoordsCache[name]) return countryCoordsCache[name];
@@ -150,7 +157,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             continue;
         }
         allMarkerCoords.push(coords);
-        const radius = 6 + Math.sqrt(count) * 4;
+        const radius = 10; // fixed radius for consistent appearance
         const marker = L.circleMarker(coords, {
             radius,
             color: '#a9a9a9',
@@ -158,11 +165,13 @@ document.addEventListener('DOMContentLoaded', async function () {
             fillColor: '#d3d3d3',
             fillOpacity: 0.9
         }).addTo(map);
-        marker.on('click', function () {
+        const handler = function () {
             map.setView(coords, 4);
             const sorted = list.slice().sort((a,b)=> (a.date||'').localeCompare(b.date||''));
             openFullModal(sorted);
-        });
+        };
+        marker.on('click', handler);
+        marker.on('touchstart', handler);
     }
 
     // Handle Nederland: group by city using city geocoding; fallback to IJsselmeer for empty city
@@ -177,7 +186,17 @@ document.addEventListener('DOMContentLoaded', async function () {
             cityBuckets[name].items.push(entry);
             continue;
         }
-        const geo = await geocodeCity(city, 'Netherlands');
+        // try hardcoded mapping first
+        let geo = null;
+        const hard = hardcodedDutchCities[city];
+        if (hard) {
+            geo = { lat: hard[0], lon: hard[1], display_name: city + ', Netherlands' };
+            // store in cache for consistency
+            cityCoordsCache[city+'||Netherlands'] = geo;
+            await saveCaches();
+        } else {
+            geo = await geocodeCity(city, 'Netherlands');
+        }
         if (!geo) {
             const name = city || 'Unknown (Netherlands)';
             if (!cityBuckets[name]) cityBuckets[name] = { coords: ijsselmeerCoords, items: [] };
@@ -195,7 +214,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         const bucket = cityBuckets[cityName];
         const count = bucket.items.length;
         const coords = bucket.coords || ijsselmeerCoords;
-        const radius = 6 + Math.sqrt(count) * 3;
+        const radius = 10; // same fixed radius as countries
         const marker = L.circleMarker(coords, {
             radius,
             color: '#a9a9a9',
@@ -203,11 +222,13 @@ document.addEventListener('DOMContentLoaded', async function () {
             fillColor: '#d3d3d3',
             fillOpacity: 0.9
         }).addTo(map);
-        marker.on('click', function () {
+        const handler = function () {
             map.setView(coords, 10);
             const sorted = bucket.items.slice().sort((a,b)=> (a.date||'').localeCompare(b.date||''));
             openFullModal(sorted);
-        });
+        };
+        marker.on('click', handler);
+        marker.on('touchstart', handler);
     }
 
     // Fit to markers
@@ -237,6 +258,12 @@ document.addEventListener('DOMContentLoaded', async function () {
     const modalMainImage = document.getElementById('world-modal-main-image');
     const modalThumbs = document.getElementById('world-modal-thumbs');
 
+    // Modal state for navigation and swipe
+    let currentModalItems = [];
+    let currentModalIndex = 0;
+    let touchStartX = null;
+    let touchStartY = null;
+
     function encodePathForUrl(p) {
         return p.split('/').map(encodeURIComponent).join('/');
     }
@@ -245,31 +272,41 @@ document.addEventListener('DOMContentLoaded', async function () {
         // listEntries are objects with key, filename, title, date
         const items = listEntries.map(it => ({ imgSrc: `website_photos/${encodePathForUrl(it.key)}`, title: it.title || it.filename || it.key }));
         if (!items.length) return;
+        currentModalItems = items;
+        currentModalIndex = 0;
         // set main to first
         setModalMain(items[0]);
         // build thumbnails
         modalThumbs.innerHTML = '';
-        items.forEach(it => {
+        items.forEach((it, idx) => {
             const thumb = document.createElement('img');
             thumb.src = it.imgSrc;
+            thumb.dataset.index = idx;
+            thumb.className = 'world-thumb';
             thumb.style.width = '120px';
-            thumb.style.height = 'auto';
+            thumb.style.height = '80px';
             thumb.style.cursor = 'pointer';
             thumb.style.display = 'block';
             thumb.style.objectFit = 'cover';
             thumb.style.border = '2px solid transparent';
             thumb.style.borderRadius = '4px';
             thumb.addEventListener('click', () => setModalMain(it));
-            thumb.addEventListener('error', () => {
-                thumb.style.display = 'none';
-            });
+            thumb.addEventListener('error', () => { thumb.style.display = 'none'; });
             modalThumbs.appendChild(thumb);
         });
+        // center first thumbnail
+        setTimeout(() => {
+            const first = modalThumbs.querySelector('img');
+            if (first) first.scrollIntoView({behavior:'auto', inline:'center'});
+        }, 0);
         modal.style.display = 'flex';
         document.body.style.overflow = 'hidden';
     }
 
     function setModalMain(item) {
+        // determine index for current item
+        const idx = currentModalItems.findIndex(it => it.imgSrc === item.imgSrc);
+        if (idx >= 0) currentModalIndex = idx;
         modalMainImage.innerHTML = '';
         const img = document.createElement('img');
         img.src = item.imgSrc;
@@ -282,7 +319,50 @@ document.addEventListener('DOMContentLoaded', async function () {
         modalTitle.textContent = (item.title || '').toUpperCase();
         // prevent the main area from scrolling; image scaling handled by CSS
         modalMainImage.style.overflow = 'hidden';
+
+        // update thumbnail selection and center the selected thumb
+        const thumbs = Array.from(modalThumbs.querySelectorAll('img'));
+        thumbs.forEach(t => { t.style.border = '2px solid transparent'; });
+        const selected = thumbs.find(t => t.src === item.imgSrc || Number(t.dataset.index) === currentModalIndex);
+        if (selected) {
+            selected.style.border = '2px solid #fff';
+            // center selected thumb horizontally
+            selected.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        }
     }
+
+    function showNextModal() {
+        if (!currentModalItems.length) return;
+        const next = (currentModalIndex + 1) % currentModalItems.length;
+        currentModalIndex = next;
+        setModalMain(currentModalItems[currentModalIndex]);
+    }
+
+    function showPrevModal() {
+        if (!currentModalItems.length) return;
+        const prev = (currentModalIndex - 1 + currentModalItems.length) % currentModalItems.length;
+        currentModalIndex = prev;
+        setModalMain(currentModalItems[currentModalIndex]);
+    }
+
+    // swipe handling on modal main image for mobile
+    modalMainImage.addEventListener('touchstart', (e) => {
+        if (!e.touches || e.touches.length === 0) return;
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+    });
+    modalMainImage.addEventListener('touchend', (e) => {
+        if (touchStartX === null) return;
+        const touch = e.changedTouches && e.changedTouches[0];
+        if (!touch) { touchStartX = null; touchStartY = null; return; }
+        const dx = touch.clientX - touchStartX;
+        const dy = touch.clientY - touchStartY;
+        // horizontal swipe threshold and ensure mostly horizontal
+        if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) {
+            if (dx < 0) showNextModal(); else showPrevModal();
+        }
+        touchStartX = null; touchStartY = null;
+    });
 
     function closeModal() {
         modal.style.display = 'none';

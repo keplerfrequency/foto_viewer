@@ -44,9 +44,16 @@
         <div id="text_top" class="text_top">
             <p>WORLD MAP</p>
             <div class="top-buttons">
-                <a href="index.html" title="Home">
-                    <img src="world.png" alt="Home" class="top-icon">
+                <a href="index.html" title="Fotos">
+                    <img src="icons/fotos.png" alt="Fotos" class="top-icon">
                 </a>
+                <a href="world.html" title="World">
+                    <img src="icons/world.png" alt="World" class="top-icon">
+                </a>
+                <a href="videos.html" title="Videos">
+                    <img src="icons/videos.png" alt="Videos" class="top-icon">
+                </a>
+                    <button id="info-button" class="info-button" title="Info" type="button"><img src="icons/i.png" alt="Info" style="width:18px;height:18px;display:block;margin:0 auto;"/></button>
             </div>
         </div>
 
@@ -64,6 +71,30 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="world.js"></script>
 
+        <!-- Info popup (same as index) -->
+        <div id="info-popup" class="info-popup">
+            <div class="info-popup__content">
+                <p>Photos from my analog collection starting in 2022 until today. Thanks for visiting, Alexandre Gabriel. All rights reserved.</p>
+                <button id="info-popup-close" class="info-popup-close">Close</button>
+            </div>
+        </div>
+
+        <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var infoButton = document.getElementById('info-button');
+            var infoPopup = document.getElementById('info-popup');
+            var infoPopupClose = document.getElementById('info-popup-close');
+            if (infoButton) {
+                infoButton.addEventListener('click', function () { infoPopup.classList.add('visible'); });
+            }
+            if (infoPopupClose) {
+                infoPopupClose.addEventListener('click', function () { infoPopup.classList.remove('visible'); });
+            }
+            if (infoPopup) {
+                infoPopup.addEventListener('click', function (event) { if (event.target === infoPopup) infoPopup.classList.remove('visible'); });
+            }
+        });
+        </script>
     <!-- Full-page modal for photo viewer -->
     <div id="world-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:2000;align-items:center;justify-content:center;">
         <div id="world-modal-box" style="background:#000;border:6px solid #222;max-width:96vw;max-height:96vh;overflow:hidden;position:relative;box-shadow:0 4px 24px rgba(0,0,0,0.6);">
