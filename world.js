@@ -29,15 +29,34 @@ document.addEventListener('DOMContentLoaded', async function () {
         localStorage.setItem(cityCacheKey, JSON.stringify(cityCoordsCache));
     }
 
-    // Hardcoded Dutch city coordinates to avoid occasional geocoding errors
+    // Keep current Dutch locations local so the map does not wait on geocoding.
     const hardcodedDutchCities = {
+        'Amsterdam': [52.3676, 4.9041],
+        'Delft': [52.0116, 4.3571],
+        'Den Haag': [52.0705, 4.3007],
         'Drachten': [53.1111, 6.0975],
         'Dr888': [53.1111, 6.0975],
         'Enkhuizen': [52.7050, 5.2860],
-        // Add Leeuwarden variants (Friesland)
+        'Friesland': [53.1642, 5.7818],
+        'Groningen': [53.2194, 6.5665],
         'Leeuwarden': [53.2012, 5.7999],
-        'Leeuwaarden': [53.2012, 5.7999]
+        'Leiden': [52.1601, 4.4970],
+        'Middelburg': [51.4988, 3.6109],
+        'Nijmegen': [51.8426, 5.8518],
+        'Rotterdam': [51.9244, 4.4777],
+        'Tiengemeten': [51.7500, 4.7200],
+        'Utrecht': [52.0907, 5.1214],
+        'Veluwe': [52.2300, 5.8500]
     };
+
+    // Nominatim's public service allows at most one request per second.
+    let nextNominatimRequest = 0;
+    async function nominatimFetch(url) {
+        const wait = Math.max(0, nextNominatimRequest - Date.now());
+        if (wait) await new Promise(resolve => setTimeout(resolve, wait));
+        nextNominatimRequest = Date.now() + 1100;
+        return fetch(url, { headers: { 'Accept-Language': 'en' } });
+    }
 
     async function getCountryCoords(name) {
         if (!name) return null;
@@ -64,7 +83,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         // Fallback to Nominatim search
         try {
             const q = encodeURIComponent(name);
-            const r = await fetch(`https://nominatim.openstreetmap.org/search?format=json&limit=1&q=${q}`);
+            const r = await nominatimFetch(`https://nominatim.openstreetmap.org/search?format=json&limit=1&q=${q}`);
             if (r.ok) {
                 const arr = await r.json();
                 if (Array.isArray(arr) && arr.length) {
@@ -83,11 +102,15 @@ document.addEventListener('DOMContentLoaded', async function () {
     }
 
     async function geocodeCity(city, countryHint) {
+        if (countryHint === 'Netherlands' && hardcodedDutchCities[city]) {
+            const [lat, lon] = hardcodedDutchCities[city];
+            return { lat, lon, display_name: city + ', Netherlands' };
+        }
         const key = city + '||' + (countryHint || '');
         if (cityCoordsCache[key]) return cityCoordsCache[key];
         try {
             const q = encodeURIComponent((city || '') + (countryHint ? ', ' + countryHint : ''));
-            const r = await fetch(`https://nominatim.openstreetmap.org/search?format=json&limit=1&q=${q}`);
+            const r = await nominatimFetch(`https://nominatim.openstreetmap.org/search?format=json&limit=1&q=${q}`);
             if (r.ok) {
                 const arr = await r.json();
                 if (Array.isArray(arr) && arr.length) {
@@ -107,7 +130,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
     async function reverseGeocode(lat, lon) {
         try {
-            const r = await fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`);
+            const r = await nominatimFetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`);
             if (r.ok) {
                 const obj = await r.json();
                 return obj.address || {};
